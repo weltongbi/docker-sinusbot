@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM debian:jessie-slim
 
-LABEL MAINTAINER Patrick Stebbe <info@moonliightz.de>
+LABEL MAINTAINER Weltongbi <weltongbi@gmail.com>
 
 ENV SINUS_USER="sinusbot" \
     SINUS_GROUP="sinusbot" \
@@ -35,8 +35,8 @@ RUN apt-get update && \
       python \
       bzip2 \
       sqlite3 \
-      ca-certificates && \
-    groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
+      ca-certificates
+ RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     useradd -u "$SINUS_USERID" -r -g "$SINUS_GROUP" -d "$SINUS_DIR" "$SINUS_USER" && \
     update-ca-certificates && \
     wget --no-check-certificate -q -O "$YTDL_BIN" "https://yt-dl.org/downloads/$YTDL_VERSION/youtube-dl" && \
@@ -47,9 +47,6 @@ RUN apt-get update && \
     mkdir -p "$SINUS_DIR" "$TS3_DIR" "$TS3_DIR/plugins" && \
     wget -qO- "$SINUS_DL_URL" | \
     tar -xjf- -C "$SINUS_DIR" && \
-    # wget -q -O- "http://dl.4players.de/ts/releases/$TS3_VERSION/TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" | \
-    # tail -n +$TS3_OFFSET | \
-    # tar xzf - -C "$TS3_DIR" && \
     cd "$SINUS_DIR" && \
     wget -q -O "TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" \
         "http://dl.4players.de/ts/releases/$TS3_VERSION/TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
@@ -63,12 +60,12 @@ RUN apt-get update && \
     cp -f "$SINUS_DIR/plugin/libsoundbot_plugin.so" "$TS3_DIR/plugins/" && \
     chown -fR "$SINUS_USER":"$SINUS_GROUP" "$SINUS_DIR" "$TS3_DIR" && \
     apt-get -qq clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 
-VOLUME [ "${SINUS_DATA_DIR}" ]
+VOLUME [ "${SINUS_DATA_DIR}", "${SINUS_DIR}/scripts" ]
 
 EXPOSE 8087
 

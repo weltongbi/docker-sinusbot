@@ -1,14 +1,14 @@
-# moonliightz/sinusbot
-[![Build Status](https://travis-ci.org/MoonLiightz/docker-sinusbot.svg?branch=master)](https://travis-ci.org/MoonLiightz/docker-sinusbot)
-[![](https://images.microbadger.com/badges/image/moonliightz/sinusbot.svg)](https://microbadger.com/images/moonliightz/sinusbot "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/moonliightz/sinusbot.svg)](https://microbadger.com/images/moonliightz/sinusbot "Get your own version badge on microbadger.com")
+# weltongbi/siniusbot
+[![Build Status](https://travis-ci.org/MoonLiightz/docker-sinusbot.svg?branch=master)](https://travis-ci.org/weltongbi/docker-sinusbot)
+[![](https://images.microbadger.com/badges/image/weltongbi/sinusbot.svg)](https://microbadger.com/images/weltongbi/sinusbot "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/weltongbi/sinusbot.svg)](https://microbadger.com/images/weltongbi/sinusbot "Get your own version badge on microbadger.com")
 
 This container provides a sinusbot instance. 
 
 
 ## Table of Contents
 - [Version](#version)
-- [Download / Update](#download--update)
+- [Download / Update](#download--update)ß
 - [Usage](#usage)
 - [Logging](#logging)
 - [Permissions](#permissions)
@@ -26,14 +26,14 @@ This container provides a sinusbot instance.
 
 ## Download / Update
 ```sh
-docker pull moonliightz/sinusbot:latest
+docker push weltongbi/siniusbot:lastet
 ```
 
 
 
 ## Usage
 ```sh
-$ docker run -d -v /home/sinusbot/data:/sinusbot/data -p 8087:8087 --name sinusbot moonliightz/sinusbot:latest
+$ docker run -d -v /home/sinusbot/data:/sinusbot/data -p 8087:8087 --name sinusbot weltongbi/siniusbot:lastet
 ```
 
 - ``` /home/sinusbot/data ``` is the directory on your local machine where your bot files will be stored
