@@ -1,6 +1,6 @@
 # weltongbi/siniusbot
 [![Build Status](https://travis-ci.org/MoonLiightz/docker-sinusbot.svg?branch=master)](https://travis-ci.org/weltongbi/docker-sinusbot)
-[![](https://images.microbadger.com/badges/image/weltongbi/sinusbot.svg)](https://microbadger.com/images/weltongbi/siniusbot "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/weltongbi/sinusbot.svg)](https://microbadger.com/images/weltongbi/sinusbot "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/weltongbi/sinusbot.svg)](https://microbadger.com/images/weltongbi/sinusbot "Get your own version badge on microbadger.com")
 
 This container provides a sinusbot instance. 
