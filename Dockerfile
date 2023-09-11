@@ -19,7 +19,7 @@ ENV SINUS_DATA_DIR="${SINUS_DIR}/data" \
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y -qq --no-install-recommends \
-    libfontconfig libxtst6 screen xvfb libxcursor1 \
+    libfontconfig libxtst6 screen xvfb libxcursor1 sudo \
     ca-certificates wget bzip2 psmisc libglib2.0-0 less python3 \
     iproute2 dbus libnss3 libegl1-mesa x11-xkb-utils libasound2 \
     libxcomposite-dev libxi6 libpci3 libxslt1.1 libxkbcommon0 libxss1\
