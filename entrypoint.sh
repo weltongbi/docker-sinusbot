@@ -12,4 +12,4 @@ $YTDL_BIN -U
 sleep 2
 
 echo "Start sinusbot"
-sudo -u "$SINUS_USER" -g "$SINUS_GROUP" "$SINUS_DIR/sinusbot"
+-u "$SINUS_USER" -g "$SINUS_GROUP" "$SINUS_DIR/sinusbot"
