@@ -1,4 +1,5 @@
-language: bash
+language: ruby
+
 services:
   - docker
 jobs:
@@ -10,11 +11,13 @@ jobs:
         - if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then docker run -d -p 8087:8087 sinusbot:test; fi
       script:
         - if [ "$TRAVIS_EVENT_TYPE" != "cron" ]; then nc -z -v -w5 127.0.0.1 8087; fi
+
     - stage: test docker image from docker hub
       before_script:
         - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then docker run -d -p 8087:8087 weltongbi/sinusbot:latest; fi
       script:
         - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then nc -z -v -w5 127.0.0.1 8087; fi
+
 notifications:
   email:
     on_success: always
