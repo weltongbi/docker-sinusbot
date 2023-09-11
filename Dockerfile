@@ -23,7 +23,7 @@ RUN apt-get update && \
     ca-certificates wget bzip2 psmisc libglib2.0-0 less python3 \
     iproute2 dbus libnss3 libegl1-mesa x11-xkb-utils libasound2 \
     libxcomposite-dev libxi6 libpci3 libxslt1.1 libxkbcommon0 libxss1\
-    locales
+    locales libxdamage-dev
 
 RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     useradd -u "$SINUS_USERID" -r -g "$SINUS_GROUP" -d "$SINUS_DIR" "$SINUS_USER" && \
