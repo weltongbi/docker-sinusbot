@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM debian
 
 LABEL MAINTAINER Weltongbi <weltongbi@gmail.com>
 
@@ -17,26 +17,15 @@ ENV SINUS_DATA_DIR="${SINUS_DIR}/data" \
     TS3_DIR="${SINUS_DIR}/TeamSpeak3-Client-linux_amd64"
 
 RUN apt-get update && \
-    apt-get install -y \
-      locales \
-      wget \
-      sudo \
-      x11vnc \
-      xinit \
-      xvfb \
-      xcb \
-      screen \
-      libxcursor1 \
-      libglib2.0-0 \
-      libnss3 \
-      libegl1-mesa \
-      x11-xkb-utils \
-      libasound2 \
-      python \
-      bzip2 \
-      sqlite3 \
-      ca-certificates
- RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
+    apt-get upgrade -y && \
+    apt-get install -y -qq --no-install-recommends \
+    libfontconfig libxtst6 screen xvfb libxcursor1 \
+    ca-certificates wget bzip2 psmisc libglib2.0-0 less python3 \
+    iproute2 dbus libnss3 libegl1-mesa x11-xkb-utils libasound2 \
+    libxcomposite-dev libxi6 libpci3 libxslt1.1 libxkbcommon0 libxss1\
+    locales
+
+RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     useradd -u "$SINUS_USERID" -r -g "$SINUS_GROUP" -d "$SINUS_DIR" "$SINUS_USER" && \
     update-ca-certificates && \
     wget --no-check-certificate -q -O "$YTDL_BIN" "https://github.com/yt-dlp/yt-dlp/releases/$YTDL_VERSION/download/yt-dlp" && \
