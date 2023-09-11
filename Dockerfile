@@ -7,10 +7,10 @@ ENV SINUS_USER="sinusbot" \
     SINUS_USERID="3000" \
     SINUS_GROUPID="3000" \
     SINUS_DIR="/sinusbot" \
-    YTDL_BIN="/usr/local/bin/youtube-dl" \
+    YTDL_BIN="/usr/local/bin/yt-dlp" \
     SINUS_DL_URL="https://www.sinusbot.com/pre/sinusbot-1.0.0-beta.2-63286de.tar.bz2" \
     YTDL_VERSION="latest" \
-    TS3_VERSION="3.1.10" \
+    TS3_VERSION="3.5.3" \
     TS3_OFFSET="1386"
 
 ENV SINUS_DATA_DIR="${SINUS_DIR}/data" \
@@ -39,7 +39,7 @@ RUN apt-get update && \
  RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     useradd -u "$SINUS_USERID" -r -g "$SINUS_GROUP" -d "$SINUS_DIR" "$SINUS_USER" && \
     update-ca-certificates && \
-    wget --no-check-certificate -q -O "$YTDL_BIN" "https://yt-dl.org/downloads/$YTDL_VERSION/youtube-dl" && \
+    wget --no-check-certificate -q -O "$YTDL_BIN" "https://github.com/yt-dlp/yt-dlp/releases/$YTDL_VERSION/download/yt-dlp" && \
     chmod 755 -f "$YTDL_BIN" && \
     locale-gen --purge en_US.UTF-8 && \
     echo LC_ALL=en_US.UTF-8 >> /etc/default/locale && \
