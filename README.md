@@ -7,20 +7,22 @@ This container provides a sinusbot instance.
 
 
 ## Table of Contents
-- [Version](#version)
-- [Download / Update](#download--update)ß
-- [Usage](#usage)
-- [Logging](#logging)
-- [Permissions](#permissions)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
+- [weltongbi/siniusbot](#weltongbisiniusbot)
+  - [Table of Contents](#table-of-contents)
+  - [Version](#version)
+  - [Download / Update](#download--update)
+  - [Usage](#usage)
+  - [Logging](#logging)
+  - [Permissions](#permissions)
+  - [Acknowledgments](#acknowledgments)
+  - [License](#license)
 
 
 
 ## Version
 
-- Sinusbot: 1.0.0-beta.1-06a54d7
-- TeamSpeak: 3.1.10
+- Sinusbot: 1.0.0-beta.2-63286de
+- TeamSpeak: 3.5.3
 
 
 
