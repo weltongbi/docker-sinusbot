@@ -1,0 +1,17 @@
+services:
+  sinusbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      OVERRIDE_PASSWORD: "maria"
+      UID: 1000 # insert output of `id -u sinusbot`
+      GID: 1000 # insert output of `id -g sinusbot`
+    ports:
+      - 8087:8087
+    volumes:
+      - SinusBot:/opt/sinusbot/scripts
+      - SinusBot:/opt/sinusbot/data
+volumes:
+  SinusBot:

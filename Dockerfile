@@ -10,7 +10,7 @@ ENV SINUS_USER="sinusbot" \
     YTDL_BIN="/usr/local/bin/yt-dlp" \
     SINUS_DL_URL="https://www.sinusbot.com/dl/sinusbot.current.tar.bz2" \
     YTDL_VERSION="latest" \
-    TS3_VERSION="3.6.2" \
+    TS3_VERSION="3.5.3" \
     TS3_OFFSET="1386"
 
 ENV SINUS_DATA_DIR="${SINUS_DIR}/data" \
@@ -23,7 +23,7 @@ RUN apt-get update && \
     ca-certificates wget bzip2 psmisc libglib2.0-0 less python3 \
     iproute2 dbus libnss3 libegl1-mesa x11-xkb-utils libasound2 \
     libxcomposite-dev libxi6 libpci3 libxslt1.1 libxkbcommon0 libxss1\
-    locales libxdamage-dev
+    locales libxdamage-dev libevent-dev liblcms2-dev libatomic1
 
 RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     useradd -u "$SINUS_USERID" -r -g "$SINUS_GROUP" -d "$SINUS_DIR" "$SINUS_USER" && \
