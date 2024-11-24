@@ -1,4 +1,4 @@
-name: ci
+name: Build on master branch and push
 
 on:
   push:
@@ -29,4 +29,3 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/sinusbot:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/sinusbot:1.6.2
