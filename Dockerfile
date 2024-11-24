@@ -10,7 +10,7 @@ ENV SINUS_USER="sinusbot" \
     YTDL_BIN="/usr/local/bin/yt-dlp" \
     SINUS_DL_URL="https://www.sinusbot.com/dl/sinusbot.current.tar.bz2" \
     YTDL_VERSION="latest" \
-    TS3_VERSION="3.5.3" \
+    TS3_VERSION="3.6.2" \
     TS3_OFFSET="1386"
 
 ENV SINUS_DATA_DIR="${SINUS_DIR}/data" \
@@ -38,7 +38,7 @@ RUN groupadd -g "$SINUS_GROUPID" -r "$SINUS_GROUP" && \
     tar -xjf- -C "$SINUS_DIR" && \
     cd "$SINUS_DIR" && \
     wget -q -O "TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" \
-        "http://dl.4players.de/ts/releases/$TS3_VERSION/TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
+        "https://files.teamspeak-services.com/releases/client/$TS3_VERSION/TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
     chmod 755 "TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
     yes | "./TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
     rm -f "TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run" && \
